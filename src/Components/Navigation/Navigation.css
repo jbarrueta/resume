@@ -1,0 +1,11 @@
+.isActive {
+  color: black;
+  /* @apply bb;
+  @apply bw2;
+  @apply b--near-white; */
+}
+
+.headImg {
+  height: 50px;
+  /* max-width: 125px; */
+}

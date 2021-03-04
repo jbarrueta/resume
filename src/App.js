@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Particles from "react-particles-js";
+import Navigation from "./Components/Navigation/Navigation";
+import "./App.css";
+import "tachyons";
+import { Route } from "react-router-dom";
+import Home from "./Pages/Home/Home";
+import Resume from "./Pages/Resume/Resume";
+import Contact from "./Pages/Contact/Contact";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Route>
+      <div>
+        <Particles className="particles" />
+        <Navigation />
+        <Route exact path="/" component={Home} />
+        <Route path="/resume" component={Resume} />
+        <Route path="/contact" component={Contact} />
+      </div>
+    </Route>
   );
 }
 
