@@ -8,7 +8,7 @@ export default function ProjectCard({ title, image, link }) {
       }}
       onClick={onClick}
     >
-      <img src={title} alt="Project Image" width="100px" />
+      <img src={title} alt="Project" width="100px" />
       <div>
         <h2>{title ? title : "Project coming soon"}</h2>
       </div>
