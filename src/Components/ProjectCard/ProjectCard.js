@@ -1,16 +1,27 @@
-export default function ProjectCard({ title, image, link }) {
-  const onClick = () => (window.location = link);
+import React, { useState } from "react";
+import "./ProjectCard.css";
+
+export default function ProjectCard({
+  image,
+  gif,
+  title,
+  description,
+  onClickHandler,
+  className,
+}) {
+  const [img, setImg] = useState(image);
   return (
     <div
-      className="tc bg-light-blue dib br3 pa3 ma2 grow pointer dim bw2 shadow-5"
-      style={{
-        backgroundColor: "rgba(255,255,255,0.15)",
-      }}
-      onClick={onClick}
+      className={`serviceCard br3 shadow-5 grow pointer ${className}`}
+      onClick={onClickHandler}
+      onMouseEnter={() => setImg(gif)}
+      onMouseLeave={() => setTimeout(() => setImg(image), 5000)}
     >
-      <img src={title} alt="Project" width="100px" />
-      <div>
-        <h2>{title ? title : "Project coming soon"}</h2>
+      <img src={img} alt="serviceGIF" height="300px" />
+      <div className="cardFilter"></div>
+      <div className="serviceTitle center f4">{title}</div>
+      <div className="serviceDescription center pa3 tc white-70">
+        {description}
       </div>
     </div>
   );
