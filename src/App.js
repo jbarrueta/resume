@@ -58,7 +58,7 @@ class App extends Component {
       <Route>
         <div className={`${nightMode ? "night" : "day"}`}>
           <div className={`App`}>
-            {/* <Particles className="App_particles" params={particleParams} /> */}
+            <Particles className="App_particles" params={particleParams} />
             <Switch>
               <Route path="/" exact>
                 <Home
